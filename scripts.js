@@ -20,7 +20,7 @@ function getLocation() {
         let city = data.city;
         let region = data.region;
 
-        cityslot.innerHTML = `${city}, ${region}`;
+        cityslot.innerHTML += `${city}, ${region}.`;
 
         let proxyUrl = 'https://cors-anywhere.herokuapp.com/', targetUrl = `https://api.darksky.net/forecast/0e17dfdfdee5ff8839c6ffead1cf1b74/${loc}?exclude=minutely,hourly,flags,alerts&units=auto`;
         fetch(proxyUrl + targetUrl)
@@ -29,16 +29,12 @@ function getLocation() {
         })
         .then((data) => {
             console.log("dark sky data: ", data);
-            let temp = `temperature: ${data.currently.temperature}`;
-            let feelsLike = `feels like ${data.currently.apparentTemperature}`;
-            let precipIntensity = `precipitation intensity: ${data.currently.precipIntensity}`;
-            let humidity = `humidity: ${data.currently.humidity}`;
-            let summary = `currently: ${data.currently.summary}`;
+            let temp = ` ${data.currently.temperature}&deg`;
+            let feelsLike = `but feels like ${data.currently.apparentTemperature}&deg`;
+            let summary = ` ${data.currently.summary}`;
 
-            tempslot.innerHTML = `${temp}, ${feelsLike}`;
-            precipslot.innerHTML = precipIntensity;
-            humidityslot.innerHTML = humidity;
-            summaryslot.innerHTML = summary;
+            tempslot.innerHTML += `${temp}, ${feelsLike}`;
+            summaryslot.innerHTML += `${summary}`;
         });
     });
 }

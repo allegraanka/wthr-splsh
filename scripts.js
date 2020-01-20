@@ -6,7 +6,7 @@ let summaryslot = document.getElementById("summary");
 let timeslot = document.getElementById("time");
 let dateslot = document.getElementById("date");
 
-dateslot.innerHTML = moment().format("dddd, MMMM Do YYYY");
+dateslot.innerHTML = moment().format("ddd, MMM Do");
 timeslot.innerHTML = moment().format("h:mm a");
 
 function getLocation() {
@@ -20,7 +20,7 @@ function getLocation() {
         let city = data.city;
         let region = data.region;
 
-        cityslot.innerHTML += `${city}, ${region}.`;
+        cityslot.innerHTML += `${city}, ${region}`;
 
         let proxyUrl = 'https://cors-anywhere.herokuapp.com/', targetUrl = `https://api.darksky.net/forecast/0e17dfdfdee5ff8839c6ffead1cf1b74/${loc}?exclude=minutely,hourly,flags,alerts&units=auto`;
         fetch(proxyUrl + targetUrl)

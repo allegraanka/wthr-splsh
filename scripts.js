@@ -9,15 +9,9 @@ let dateslot = document.getElementById("date");
 dateslot.innerHTML = moment().format("ddd, MMM Do");
 document.onload = window.setInterval(getTime, 1000);
 
-function pad(n, width, z) {
-    z = z || '0';
-    n = n + '';
-    return n.length >= width ? n : new Array(width - n.length + 1).join(z) + n;
-}
-
 function getTime() {
     let d = new Date();
-    let t = pad(d.getHours()-12,2)+':'+pad(d.getMinutes(),2)+':'+pad(d.getSeconds(),2);
+    let t = d.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true });
     timeslot.innerHTML = t;
 }
 

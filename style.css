@@ -2,50 +2,17 @@ body {
     background: #1d1b1b;
     color: white;
     font-family: 'Roboto Mono', monospace;
-}
-
-.cursive {
-    font-family: 'Comfortaa', cursive;
-    font-size: 3.2rem;
-}
-
-.blend {
-    mix-blend-mode: exclusion;
+    font-size: 1.4rem;
+    width: 80%;
+    margin: 0 auto;
 }
 
 .external-container {
     display: flex;
-}
-
-.body-container {
-    display: flex;
-    flex-direction: column;
-    text-align: left;
+    justify-content: center;
 }
 
 .section {
-    width: 40%;
-    padding: .5%;
-    margin: 2.5%;
-    line-height: 1.6;
-}
-
-.date {
-    position: fixed;
-    right: 25px;
-}
-
-#date, #city, #temp {
-    font-size: 1.2rem;
-    margin: 0 0 0 10px;
-}
-
-#summary {
-    font-size: 1.2rem;
-    margin: 15px 0 0 10px;
-}
-
-#time {
-    font-size: 3.2rem;
-    margin: 0 auto;
+    margin: 5%;
+    padding: 2.5%;
 }

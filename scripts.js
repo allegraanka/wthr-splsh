@@ -7,7 +7,19 @@ let timeslot = document.getElementById("time");
 let dateslot = document.getElementById("date");
 
 dateslot.innerHTML = moment().format("ddd, MMM Do");
-timeslot.innerHTML = moment().format("h:mm a");
+document.onload = window.setInterval(getTime, 1000);
+
+function pad(n, width, z) {
+    z = z || '0';
+    n = n + '';
+    return n.length >= width ? n : new Array(width - n.length + 1).join(z) + n;
+}
+
+function getTime() {
+    let d = new Date();
+    let t = pad(d.getHours()-12,2)+':'+pad(d.getMinutes(),2)+':'+pad(d.getSeconds(),2);
+    timeslot.innerHTML = t;
+}
 
 function getLocation() {
     fetch('https://ipinfo.io/?token=396826dfb86b94')

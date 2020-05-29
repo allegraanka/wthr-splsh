@@ -3,16 +3,19 @@ body {
     color: white;
     font-family: 'Roboto Mono', monospace;
     font-size: 1.4rem;
-    width: 80%;
-    margin: 0 auto;
-}
-
-.external-container {
-    display: flex;
-    justify-content: center;
 }
 
 .section {
-    margin: 5%;
+    margin: 3%;
     padding: 2.5%;
+    width: 80%;
+}
+
+.footer {
+    text-align: right;
+    width: 95%;
+    padding: 1.5%;
+    position: fixed;
+    bottom: 0;
+    font-size: 0.8rem;
 }

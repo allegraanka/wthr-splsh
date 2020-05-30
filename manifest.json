@@ -2,7 +2,7 @@
     "manifest_version": 2,
     "name": "wthr-splsh",
     "description": "Get current date, time, location, weather conditions, and inspo quote with each new tab or window.",
-    "version": "1",
+    "version": "1.0",
     "author": "Allegra Anka",
     "browser_action": {
         "default_title": "wthr-splsh"

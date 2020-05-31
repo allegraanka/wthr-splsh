@@ -3,8 +3,13 @@ body {
     font-size: 1.4rem;
 }
 
+.logo-title, #time, #date {
+    font-size: 2.2rem;
+    color: turquoise;
+}
+
 .external-container {
-    margin-top: 10%;
+    margin-top: 5%;
 }
 
 .section {
@@ -18,12 +23,34 @@ body {
     font-size: 0.8rem;
 }
 
+h2 {
+    margin-bottom: 0px;
+    color: turquoise;
+}
+
 .photographer-info {
     align-self: flex-start;
     flex-grow: 2;
     max-width: 50%;
 }
 
+.photographer, .photo {
+    margin-top: 25px;
+}
+
 .unsplash-credit {
     align-self: flex-end;
+}
+
+a {
+    color: turquoise;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:visited {
+    color: white;
+    text-decoration: line-through;
 }

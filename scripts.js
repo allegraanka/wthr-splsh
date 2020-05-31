@@ -112,12 +112,12 @@ async function setPhoto() {
     let photoUrl = await getPhoto().then(photoDetails => photoDetails.photo.photoUrl);
     let photoTakenWith = await getPhoto().then(photoDetails => photoDetails.photo.takenWith);
 
-    photographerNameField.innerHTML += photographerName;
-    photographerFromField.innerHTML += photographerLoc;
-    photographerBioField.innerHTML += photographerBio;
-    photoTakenWithField.innerHTML += photoTakenWith;
+    if (photographerName) {photographerNameField.innerHTML += `Name: ${photographerName}`;} else {photographerNameField.innerHTML += `Name: Photographer name not provided.`}
+    if (photographerLoc) {photographerFromField.innerHTML += `From: ${photographerLoc}`;} else {photographerFromField.innerHTML += `From: Photographer location not provided.`}
+    if (photographerBio) {photographerBioField.innerHTML += `Bio: ${photographerBio}`;} else {photographerBioField.innerHTML += `Bio: Photographer bio not provided.`}
+    if (photoTakenWith) {photoTakenWithField.innerHTML += `Taken with a ${photoTakenWith}`;} else {photoTakenWithField.innerHTML += `Taken with: Sorry! Camera make & model not provided.`}
 
-    let styling = `body { background: #1a1e24 no-repeat center url(${photoUrl}); background-blend-mode: overlay; color: white; }`;
+    let styling = `body { background: #1a1e24 center no-repeat url(${photoUrl}); color: white; background-blend-mode: overlay; }`;
     let style = document.createElement('style');
     style.appendChild(document.createTextNode(styling));
 
